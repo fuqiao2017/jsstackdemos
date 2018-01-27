@@ -8,7 +8,6 @@
     "start": "yarn dev:start",
     "dev:start": "nodemon --ignore lib --exec babel-node src/server",
     "test": "eslint src && flow && jest --coverage",
-    "prepush": "yarn test && yarn prod:build",
     "prod:build": "rimraf lib && babel src -d lib --ignore .test.js",
     "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
     "prod:stop": "pm2 delete server"
